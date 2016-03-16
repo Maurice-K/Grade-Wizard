@@ -1,0 +1,29 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Latest compiled version of Bootstrap. V. 3.6 -->
+
+
+<meta charset="UTF-8">
+<title>{{ title }}</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<ol>
+				{% for student in students %}
+					<li><a href="#">{{ student.first_name }} {{ student.last_name }}</a></li>
+				{% endfor %}
+				</ol>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
