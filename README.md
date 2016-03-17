@@ -1,3 +1,3 @@
-# Grade-Wizard
+# Grade Wizard
 
 Author: Maurice Kelly
