@@ -44,23 +44,27 @@ def homework_creation_form(request):
 	}
 	return render(request, 'gradeCal/homework_creation_form.html', context)
 
-def completed_homework(request):
+def completed_test(request):
 	form = CompletedHomework()
 	context = {
-		'completed_homework': form, 
+		'title': 'Completed Test',s
+		'completed_test': form, 
 	}
-	return render(request, 'gradeCal/completed_homework.html', context)
+	return render(request, 'gradeCal/completed_test.html', context)
+
+def completed_assignment(request):
+	form = CompletedHomework()
+	context = {
+		'title': 'Completed Assignment',
+		'completed_assignment': form, 
+	}
+	return render(request, 'gradeCal/completed_assignment.html', context)
 
 def completed_homework(request):
 	form = CompletedHomework()
 	context = {
-		'completed_homework': form, 
-	}
-	return render(request, 'gradeCal/completed_homework.html', context)
+		'title': 'Completed Homework',
 
-def completed_homework(request):
-	form = CompletedHomework()
-	context = {
 		'completed_homework': form, 
 	}
 	return render(request, 'gradeCal/completed_homework.html', context)
