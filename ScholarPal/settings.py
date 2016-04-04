@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'gradeCal.apps.GradecalConfig',
+    'login',
+    'gradeCal',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
