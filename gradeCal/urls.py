@@ -6,6 +6,6 @@ from . import views
 app_name = 'gradeCal'
 urlpatterns = [
 	# /gradeCal
-	url(r'^$', views.base, name='base'),
-	url(r'^[0-9]/$', views.test, name='test'),
+	url(r'^$', views.index, name='index'),
+	url(r'^(?P<id>\d+)/$', views.dashboard, name='dashboard'),
 ]

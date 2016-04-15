@@ -7,19 +7,18 @@
 
 <!-- Latest compiled version of Bootstrap. V. 3.6 -->
 
-
 <meta charset="UTF-8">
 <title>{{ title }}</title>
 </head>
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12">
-				<ol>
+			<div class="col-md-12">
+				<ul>
 				{% for student in students %}
-					<li><a href="#">{{ student.first_name }} {{ student.last_name }}</a></li>
+					<li><a href="{% url 'gradeCal:dashboard' id=student.id %}">{{ student.first_name }} {{ student.last_name }}</a></li>
 				{% endfor %}
-				</ol>
+				</ul>
 			</div>
 		</div>
 	</div>

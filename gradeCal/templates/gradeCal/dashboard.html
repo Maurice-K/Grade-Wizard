@@ -1,0 +1,27 @@
+{% load staticfiles %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ student.first_name }}'s Wizard</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					You are currently enrolled in the following courses:
+					<ul>
+						{% for course in courses %}
+						<li>{{ course.title }}</li>
+						{% endfor %}
+					</ul>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -18,9 +18,9 @@ class Course(models.Model):
 	student = models.ForeignKey(Student)
 	title = models.CharField(max_length=50)
 
-
 	def __str__(self):
 		return self.title
+
 
 #Table that handles each course's grade distribution.
 #Ex: Final worth 35 percent, Midterm worth 30 percent, Homework/Assignments worth 15 percent, Quizzes worth 20 percent
