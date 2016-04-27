@@ -6,7 +6,6 @@ from django.core.urlresolvers import reverse
 # Look more into 'User' modules and autheticaton. Turn the Student class into a User class with security and autheticatoin implemented. 
 
 class Student(models.Model):
-
 	first_name = models.CharField(max_length=50)
 	last_name = models.CharField(max_length=50)
 
