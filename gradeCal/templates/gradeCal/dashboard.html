@@ -15,10 +15,15 @@
 					You are currently enrolled in the following courses:
 					<ul>
 						{% for course in courses %}
-						<li>{{ course.title }}</li>
+							<li><a href="{% url 'gradeCal:selected_course' id=course.id %}">{{ course.title }}</a></li>
 						{% endfor %}
 					</ul>
 				</p>
+				<form method='POST' action="">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<input type="submit" value="Create Course">
+				</form>
 			</div>
 		</div>
 	</div>

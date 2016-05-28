@@ -16,9 +16,14 @@
 			<div class="col-md-12">
 				<ul>
 				{% for student in students %}
-					<li><a href="{% url 'gradeCal:dashboard' id=student.id %}">{{ student.first_name }} {{ student.last_name }}</a></li>
+					<li><a href="{% url 'gradeCal:dashboard' id=student.id %}">View grades for {{ student.first_name }} {{ student.last_name }}</a></li>
 				{% endfor %}
 				</ul>
+				<form method='POST' action="">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<input type="submit" value="Create Student">
+				</form>
 			</div>
 		</div>
 	</div>

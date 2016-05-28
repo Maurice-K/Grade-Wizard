@@ -2,8 +2,6 @@ from django.db import models
 from django.core.urlresolvers import reverse
 
 # Create your models here.
-# Reminders:
-# Look more into 'User' modules and autheticaton. Turn the Student class into a User class with security and autheticatoin implemented. 
 
 class Student(models.Model):
 	first_name = models.CharField(max_length=50)
@@ -14,8 +12,9 @@ class Student(models.Model):
 
 
 class Course(models.Model):
-	student = models.ForeignKey(Student)
+	student = models.ForeignKey(Student, on_delete=models.CASCADE)
 	title = models.CharField(max_length=50)
+	
 
 	def __str__(self):
 		return self.title
@@ -30,7 +29,7 @@ class CourseAssessment(models.Model):
 	percentage = models.IntegerField(default=0)
 
 	def __str__(self):
-		self.title
+		return self.title
 
 
 #Grades that belong in course assessment
