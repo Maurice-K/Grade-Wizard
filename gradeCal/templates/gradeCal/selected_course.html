@@ -1,0 +1,24 @@
+{% extends "gradeCal/base.html" %}
+<head>
+  <meta charset="UTF-8">
+  <title>
+  {% block head_title %}
+    {{ enrolled_student.first_name }} | GW
+  {% endblock head_title %}
+  </title>
+</head>
+
+ {% block main_content %}
+<a class="navbar-brand" href="{% url 'gradeCal:student_list' %}">Grade Cal</a>
+
+
+  <h1 class="text-center">{{course.title}}</h1>
+  <h3 class="text-center">88 B</h3>
+<ul>
+  {% for assessment in course_assessments %}
+  <li>
+    {{ assessment.title }}, {{assessment.percentage}}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock main_content %}

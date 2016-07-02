@@ -1,0 +1,16 @@
+{% extends "gradeCal/base.html" %}
+
+
+
+{% block main_content %}
+	<ul>
+	{% for student in students %}
+		<li><a href="{% url 'gradeCal:dashboard' id=student.id %}">View grades for {{ student.first_name }} {{ student.last_name }}</a> | <a href="{% url 'gradeCal:delete_student' id=student.id %}">Delete Student</a> | <a href="{% url 'gradeCal:modify_student' id=student.id %}">Modify Student</a></li>
+	{% endfor %}
+	</ul>
+	<form method='POST' action="">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Create Student">
+	</form>
+{% endblock main_content %}

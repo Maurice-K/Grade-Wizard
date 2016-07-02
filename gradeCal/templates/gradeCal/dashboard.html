@@ -1,31 +1,26 @@
-{% load staticfiles %}
+{% extends 'gradeCal/base.html' %}
 
-
-<!DOCTYPE html>
-<html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>{{ student.first_name }}'s Wizard</title>
+	<title>
+	{% block head_title %}
+		{{ student.first_name }} | GW
+	{% endblock head_title %}
+	</title>
 </head>
-<body>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<p>
-					You are currently enrolled in the following courses:
-					<ul>
-						{% for course in courses %}
-							<li><a href="{% url 'gradeCal:selected_course' id=course.id %}">{{ course.title }}</a></li>
-						{% endfor %}
-					</ul>
-				</p>
-				<form method='POST' action="">
-					{% csrf_token %}
-					{{ form.as_p }}
-					<input type="submit" value="Create Course">
-				</form>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
+
+{% block main_content %}
+<p>
+	You are currently enrolled in the following courses:
+	<ul>
+		{% for course in courses %}
+			<li><a href="{% url 'gradeCal:selected_course' id=course.id %}">{{ course.title }}</a></li>
+		{% endfor %}
+	</ul>
+</p>
+<form method='POST' action="">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Create Course">
+</form>
+{% endblock main_content %}

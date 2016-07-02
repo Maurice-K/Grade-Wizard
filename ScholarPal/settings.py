@@ -121,24 +121,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-#Insert the static file directories here. All directories here will be sent to 'STATIC_ROOT'. 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static_in_project", "static_files"),
-    #'var/www/static/',
-]
+if DEBUG: #Deployment purposes
+    STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdns", "ScholarPal")
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "static"),
+    ]
 
-# Makes it easy for the various settings or situations that need to be absolute paths
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
-#Static files will be served from here
-#Ex: If you were using AMAZON Web Services to host your static files, you would change the static root directory to AMAZON Web Services. 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_for_venv", "static_root")
-
-
-#Media files will be serverd from here
-#Ex: Images, Videos, Etc
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_for_venv", "media_root")
 
 
 

@@ -1,0 +1,19 @@
+{% extends 'gradeCal/base.html' %}
+
+<head>
+	<meta charset="UTF-8">
+	<title>
+	{% block head_title %}
+		{{ student.first_name }} | Modification
+	{% endblock head_title %}
+	</title>
+</head>
+
+{% block main_content %}
+	<p>You are currently modifying {{ student.first_name }}</p>
+	<form method='POST' action="">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Modify Student">
+	</form>
+{% endblock main_content %}
